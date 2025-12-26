@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  AZtomiq - Modern Framework
+</title>
+
+  <meta name="description" content="Behind the scenes, technical insights, and documentation for the AZtomiq ecosystem.">
+  
+    <meta name="keywords" content="free tools, online utility, aztomiq, ss-framework">
+    
+
+      <!-- Canonical & Language Strategy -->
+      
+        <link rel="canonical" href="https://aztomiq.vercel.app/blog/" />
+        <link rel="alternate" hreflang="vi" href="https://aztomiq.vercel.app/blog/" />
+        <link rel="alternate" hreflang="en" href="https://aztomiq.vercel.app/blog/?lang=en" />
+        <link rel="alternate" hreflang="x-default" href="https://aztomiq.vercel.app/blog/?lang=en" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://aztomiq.vercel.app/blog/?lang=en" />
+        <meta property="og:title" content="AZtomiq - Modern Framework" />
+        <meta property="og:description" content="Behind the scenes, technical insights, and documentation for the AZtomiq ecosystem." />
+        <meta property="og:image" content="https://aztomiq.vercel.app/assets/images/og-default.png" />
+        <meta property="og:site_name" content="AZtomiq" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="vi_VN" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://aztomiq.vercel.app/blog/?lang=en" />
+        <meta name="twitter:title" content="AZtomiq - Modern Framework" />
+        <meta name="twitter:description" content="Behind the scenes, technical insights, and documentation for the AZtomiq ecosystem." />
+        <meta name="twitter:image" content="https://aztomiq.vercel.app/assets/images/og-default.png" />
+
+        <!-- Author & Copyright -->
+        <meta name="author" content="AZtomiq Team" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="../assets/css/global.css?h=94513826">
+        
+          <link rel="stylesheet" href="../assets/features/blog/style.css?h=c9913452">
+          
+            
+                    <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+                    <link rel="manifest" href="../manifest.json">
+
+                    <!-- Lucide Icons Library -->
+                    <script src="https://unpkg.com/lucide@latest"></script>
+
+                    <script src="../assets/js/user-mode.js?h=7713ad69"></script>
+
+                    <!-- Dark Mode Script (Blocking) -->
+                    <script>
+                      const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                      document.documentElement.setAttribute('data-theme', savedTheme);
+                    </script>
+
+                    <!-- Vercel Analytics (Commented to fix 404 in non-Vercel environments)
+  <script>
+    window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/analytics/script.js"></script>
+  -->
+
+                    <!-- Schema.org Structured Data -->
+                    
+
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AZtomiq",
+    "url": "https://aztomiq.vercel.app",
+    "description": "A comprehensive A-Z framework for building utility sites.",
+    "inLanguage": "en-US",
+    "author": {
+      "@type": "Person",
+      "name": "AZtomiq Team"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aztomiq.vercel.app/en/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://aztomiq.vercel.app/en/blog/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Articles",
+    "description": "Behind the scenes, technical insights, and documentation for the AZtomiq ecosystem.",
+    "url": "https://aztomiq.vercel.app/en/blog/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Works on all modern browsers (Chrome, Firefox, Safari, Edge).",
+    "softwareVersion": "1.0.0",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "AZtomiq Team"
+    },
+    "inLanguage": "en-US",
+    "image": "https://aztomiq.vercel.app/assets/images/logo.svg"
+  }
+]
+</script>
+</head>
+
+<body class="">
+  
+      <header class="site-header">
+  <div class="header-inner container">
+    <div class="nav-item logo-wrapper">
+      <a href="../?lang=en" class="logo-link">
+        <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon" width="28" height="28">
+        <span class="logo-text">
+          AZtomiq
+        </span>
+      </a>
+
+      <button class="menu-trigger dropdown-toggle" aria-haspopup="true" aria-expanded="false" title="Menu"
+        style="background: none; border: none; padding: 4px; cursor: pointer; display: flex; align-items: center; margin-left: 5px;">
+        <i data-lucide="chevron-down" style="width: 16px; height: 16px; color: var(--text-muted); opacity: 0.6;"></i>
+      </button>
+
+      <div class="dropdown-menu mega-menu">
+  <div class="mega-sidebar">
+    <div class="mega-sidebar-header">
+      <a href="../?lang=en" class="sidebar-logo logo-link">
+        <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon" width="28" height="28">
+        <span class="logo-text">
+          AZtomiq
+        </span>
+      </a>
+    </div>
+    <div class="mega-sidebar-links">
+      <a href="../categories/?lang=en"
+        class="mega-side-link ">
+        <span class="icon-wrap"><i data-lucide="folder-kanban"></i></span>
+        <span class="link-text">
+          Categories
+        </span>
+      </a>
+      <a href="../blog/?lang=en"
+        class="mega-side-link active">
+        <span class="icon-wrap"><i data-lucide="pen-tool"></i></span>
+        <span class="link-text">
+          Articles
+        </span>
+      </a>
+      <a href="../changelog/?lang=en"
+        class="mega-side-link ">
+        <span class="icon-wrap"><i data-lucide="history"></i></span>
+        <span class="link-text">
+          Version History
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mega-content-wrap">
+    
+      <div class="mega-grid">
+        
+          <div class="mega-cat-card accent-blue">
+            <div class="mega-cat-header">
+              <span class="mega-cat-icon"><i data-lucide="wrench"></i></span>
+              <span class="mega-cat-title">
+                General
+              </span>
+            </div>
+            <div class="mega-cat-links">
+              
+                <a href="../hello-world/?lang=en"
+                  class="mega-tool-link mode-standard-only ">
+                  <span class="tool-dot"></span>
+                  <span class="tool-label">
+                    Hello World
+                  </span>
+                  
+                </a>
+                
+            </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Desktop Search Box -->
+      <div class="header-search-box desktop-only" id="header-search-box">
+        <span class="search-box-icon"><i data-lucide="search" style="width: 18px; height: 18px;"></i></span>
+        <input type="text" class="header-search-input"
+          placeholder="Search... (Ctrl + K)" readonly>
+        <kbd>Ctrl+K</kbd>
+      </div>
+
+      <a href="../categories/?lang=en" class="btn-icon"
+        title="Categories" aria-label="Categories">
+        <i data-lucide="grid-3x3"></i>
+      </a>
+
+      <button id="search-btn-mobile" class="btn-icon search-trigger mobile-only"
+        title="Search" aria-label="Search">
+        <i data-lucide="search"></i>
+      </button>
+
+      <a href="../blog/?lang=vi"
+        class="lang-switch" title="Switch Language" aria-label="Tiếng Việt">
+        <span aria-hidden="true">
+          🇻🇳
+        </span>
+      </a>
+      <button id="mode-toggle" class="mode-toggle-btn" title="Advanced Mode"
+        aria-label="Toggle User Mode">
+        <span class="mode-text">
+          Standard
+        </span>
+        <div class="mode-switch">
+          <div class="mode-slider">
+            <span class="mode-icon"><i data-lucide="zap" style="width: 12px; height: 12px;"></i></span>
+          </div>
+        </div>
+        <span class="mode-text">
+          Advanced
+        </span>
+      </button>
+
+      <a href="https://github.com/ph4n4n/aztomiq" target="_blank" rel="noopener" class="btn-icon" title="GitHub Repository"
+        aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+
+      <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Overlay / Modal (Reusable by hidden header mode) -->
+<div id="search-modal" class="search-modal">
+  <div class="search-overlay"></div>
+  <div class="search-container">
+    <div class="search-header">
+      <span class="search-icon" aria-hidden="true"><i data-lucide="search"></i></span>
+      <input type="text" id="search-input" placeholder="Search... (Ctrl + K)" autocomplete="off"
+        aria-label="Search... (Ctrl + K)">
+      <button id="close-search" class="close-search"
+        aria-label="Close search">&times;</button>
+    </div>
+    <div id="search-results" class="search-results">
+      <!-- Results will be injected here -->
+    </div>
+    <div class="search-footer">
+      <div class="search-hints">
+        <span><kbd>↵</kbd> Select</span>
+        <span><kbd>↑↓</kbd> Navigate</span>
+        <span><kbd>esc</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Embed i18n data for client-side JS -->
+<script id="i18n-data" type="application/json">
+  {
+    "search_no_results": "No results found for"
+  }
+</script>
+
+<!-- Embed tools data for client-side search -->
+<script id="tools-data" type="application/json">
+  
+  [{"id":"blog","link":"../en/blog/","icon":"pen-tool","title":"Articles","desc":"Behind the scenes, technical insights, and documentation for the AZtomiq ecosystem.","category":"home.cats.legacy.title"},{"id":"hello-world","link":"../en/hello-world/","icon":"smile","title":"Hello World","desc":"A simple example tool to get you started.","category":"General"}]
+</script>
+</header>
+        
+
+          <main class="container">
+            
+  <nav class="breadcrumbs-container" aria-label="Breadcrumb">
+    <ol class="breadcrumbs-list">
+      <li class="breadcrumb-item">
+        <a href="../en/" class="breadcrumb-link" title="Home">
+          <i data-lucide="home"></i>
+        </a>
+      </li>
+
+      
+
+          <li class="breadcrumb-separator">
+            <i data-lucide="chevron-right"></i>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <span class="breadcrumb-current">
+              Articles
+            </span>
+          </li>
+    </ol>
+  </nav>
+
+  <style>
+    .breadcrumbs-container {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .breadcrumbs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .breadcrumb-link i {
+      width: 14px;
+      height: 14px;
+    }
+
+    .breadcrumb-link:hover {
+      color: var(--primary-color);
+    }
+
+    .breadcrumb-separator {
+      color: var(--border-color);
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb-separator i {
+      width: 14px;
+      height: 14px;
+    }
+
+    .breadcrumb-current {
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 600px) {
+      .breadcrumbs-container {
+        padding: 0.75rem 0;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+  
+              <div class="blog-container">
+
+  <!-- HOME VIEW: List of Articles -->
+  <div id="home-view" class="blog-view">
+    <header class="blog-hero">
+      <div class="hero-chip">✍️ Articles
+      </div>
+      <h1 class="blog-title-main">
+        Articles & Technical Insights
+      </h1>
+      <p class="blog-subtitle">
+        Behind the scenes, technical insights, and documentation for the AZtomiq ecosystem.
+      </p>
+    </header>
+
+    <div class="post-list">
+      
+        
+          
+            <div onclick="route('introducing-aztomiq')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Milestone
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    3 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Welcome to AZtomiq
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+            <div onclick="route('technical-documentation-en')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Docs
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    12 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Technical Documentation &amp; Core Architecture
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+            <div onclick="route('tutorial-create-feature-en')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Tutorial
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    12 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Step-by-Step Guide: Creating Your First Feature
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+            <div onclick="route('zero-backend-architecture-en')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Architecture
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    8 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Zero-Backend Architecture: Running Hundreds of Tools for $0
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+              
+    </div>
+  </div>
+
+  <!-- ARTICLE VIEW: Dynamic Content Container -->
+  <div id="article-view" class="blog-view hidden">
+    <div class="article-nav">
+      <button onclick="route('')" class="article-back">
+        <span class="back-icon">←</span>
+        <span>
+          Back
+        </span>
+      </button>
+    </div>
+
+    <article class="article-wrapper">
+      <header class="article-header">
+        <div id="article-meta-top" class="post-meta"></div>
+        <h1 id="article-title" class="article-title-text"></h1>
+      </header>
+
+      <div id="article-content" class="article-content markdown-body">
+        <!-- Content Injected Here -->
+      </div>
+
+      <footer class="article-footer">
+        <div class="footer-divider"></div>
+        <button onclick="route('')" class="btn-outline">
+          Back
+        </button>
+      </footer>
+    </article>
+  </div>
+
+</div>
+
+<!-- Hidden Data Source -->
+<script id="blog-posts-data" type="application/json">
+  [{"title":"Welcome to AZtomiq","date":"Dec 24, 2025","tag":"Milestone","lang":"en","readTime":"3 min read","slug":"introducing-aztomiq","body":"\u003ch1>⚛️ AZtomiq: A New Era of Web Utilities\u003c/h1>\n\u003cp>Welcome to \u003cstrong>AZtomiq\u003c/strong>, a modern, high-performance, open-source multi-tool framework designed with a \u003cstrong>Privacy-first\u003c/strong> philosophy and built for speed.\u003c/p>\n\u003ch2>🌟 Why AZtomiq?\u003c/h2>\n\u003cp>In a web landscape dominated by heavy and bloated frameworks, AZtomiq takes a different path: \u003cstrong>The purity of Vanilla JS and the power of Atomic Architecture.\u003c/strong>\u003c/p>\n\u003cp>We believe that utility tools - whether they are for financial calculations, text processing, or developer utilities - should be:\u003c/p>\n\u003col>\n\u003cli>\u003cstrong>Fast\u003c/strong>: Instant load times, immediate feedback.\u003c/li>\n\u003cli>\u003cstrong>Private\u003c/strong>: 100% Client-side processing. Your data stays in your browser.\u003c/li>\n\u003cli>\u003cstrong>Modular\u003c/strong>: Every tool is a self-contained entity, easy to maintain and scale.\u003c/li>\n\u003c/ol>\n\u003ch2>🏗️ Atomic Architecture\u003c/h2>\n\u003cp>In AZtomiq, every tool is an &quot;Atom&quot;. A typical feature folder includes:\u003c/p>\n\u003cul>\n\u003cli>\u003ccode>tool.yaml\u003c/code>: The configuration brain.\u003c/li>\n\u003cli>\u003ccode>index.ejs\u003c/code>: The UI skeleton.\u003c/li>\n\u003cli>\u003ccode>script.js\u003c/code> &amp; \u003ccode>style.css\u003c/code>: The muscles and appearance.\u003c/li>\n\u003cli>\u003ccode>locales/\u003c/code>: The multi-lingual voice.\u003c/li>\n\u003c/ul>\n\u003cp>This approach allows developers to scaffold a new tool in seconds:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run aztomiq tool:create [tool-name]\n\u003c/code>\u003c/pre>\n\u003ch2>🛡️ Privacy is Priority #1\u003c/h2>\n\u003cp>Unlike traditional online services that send your data to a server for processing, AZtomiq leverages the power of modern browsers. When you calculate payroll or format a massive JSON file, that data \u003cstrong>never leaves your device\u003c/strong>.\u003c/p>\n\u003ch2>🚀 The Future of AZtomiq\u003c/h2>\n\u003cp>We are constantly evolving the ecosystem with:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Smart Caching\u003c/strong> for a seamless PWA experience.\u003c/li>\n\u003cli>A consistent \u003cstrong>Design System\u003c/strong> (Glassmorphism inspired).\u003c/li>\n\u003cli>Advanced user modes (Standard &amp; Advanced).\u003c/li>\n\u003c/ul>\n\u003cp>Join us in building a faster, safer, and more convenient web!\u003c/p>\n\u003chr>\n\u003cp>\u003cem>The AZtomiq Team\u003c/em>\u003c/p>\n"},{"title":"Technical Documentation & Core Architecture","date":"Dec 24, 2025","tag":"Docs","lang":"en","readTime":"12 min read","slug":"technical-documentation-en","body":"\u003cp>Welcome to the official technical documentation of \u003cstrong>AZtomiq\u003c/strong>. This article is extracted directly from the project&#39;s \u003ccode>README.md\u003c/code> to give you the most comprehensive overview of the system.\u003c/p>\n\u003chr>\n\u003ch1>⚛️ AZtomiq\u003c/h1>\n\u003cp>A high-performance, \u003cstrong>privacy-first\u003c/strong>, and ultra-modular multi-tool website framework. Built with a passion for simplicity and speed.\u003c/p>\n\u003chr>\n\u003ch2>🌟 Why AZtomiq?\u003c/h2>\n\u003cp>AZtomiq isn&#39;t just another static site generator. It&#39;s an \u003cstrong>Ecosystem\u003c/strong> designed for building professional utility toolkits.\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>⚛️ Atomic Architecture\u003c/strong>: Every feature is a self-contained &quot;Atom&quot;. Zero global dependencies, maximum portability.\u003c/li>\n\u003cli>\u003cstrong>🛡️ Privacy by Design\u003c/strong>: 100% Client-side processing. No data ever leaves the user&#39;s browser.\u003c/li>\n\u003cli>\u003cstrong>🌍 Production Ready i18n\u003c/strong>: Built-in multi-lingual support with atomic translation merging.\u003c/li>\n\u003cli>\u003cstrong>⚡ Blazing Fast\u003c/strong>: No heavy JS frameworks. Powered by Vanilla JS and optimized EJS templates.\u003c/li>\n\u003cli>\u003cstrong>📱 Modern PWA\u003c/strong>: Fully offline-capable with automated Service Worker generation.\u003c/li>\n\u003c/ul>\n\u003chr>\n\u003ch2>🏗️ Core Architecture\u003c/h2>\n\u003cpre>\u003ccode class=\"language-text\">.\n├── bin/              # 🛠️ Main CLI entry point\n├── docs/             # 📚 Documentation &amp; Guides\n├── scripts/          # ⚙️ Modular build logic (Pages, Assets, Cache)\n├── src/\n│   ├── assets/       # 🎨 Global Design System (CSS/JS)\n│   ├── data/         # 📊 Global site &amp; category metadata\n│   ├── features/     # ⚛️ Atomic Tools (The heart of AZtomiq)\n│   ├── includes/     # 🧩 Reusable EJS components\n│   ├── locales/      # 🌍 System-wide translations\n│   ├── pages/        # 📄 Static landing &amp; system pages\n│   └── templates/    # 🧬 SEO &amp; PWA generators\n└── package.json\n\u003c/code>\u003c/pre>\n\u003chr>\n\u003ch2>🚀 Quick Start\u003c/h2>\n\u003ch3>1. Installation\u003c/h3>\n\u003cpre>\u003ccode class=\"language-bash\">git clone https://github.com/ph4n4n/aztomiq.git\ncd aztomiq\nnpm install\n\u003c/code>\u003c/pre>\n\u003ch3>2. Development\u003c/h3>\n\u003cp>Start the watcher and local server:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run dev\n\u003c/code>\u003c/pre>\n\u003ch3>3. Creating Your First Tool\u003c/h3>\n\u003cp>Use our CLI to scaffold a new feature instantly:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run aztomiq tool:create my-awesome-tool\n\u003c/code>\u003c/pre>\n\u003ch3>4. Build for Production\u003c/h3>\n\u003cp>Generate the static site in the \u003ccode>dist/\u003c/code> folder:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run build\n\u003c/code>\u003c/pre>\n\u003chr>\n\u003ch2>🤝 Contribution\u003c/h2>\n\u003cp>We love contributors! If you have a cool tool idea:\u003c/p>\n\u003col>\n\u003cli>Fork the Project.\u003c/li>\n\u003cli>Create your Feature Branch (\u003ccode>git checkout -b feature/AmazingTool\u003c/code>).\u003c/li>\n\u003cli>Create your tool using \u003ccode>npm run aztomiq tool:create\u003c/code>.\u003c/li>\n\u003cli>Commit your Changes.\u003c/li>\n\u003cli>Push to the Branch.\u003c/li>\n\u003cli>Open a Pull Request.\u003c/li>\n\u003c/ol>\n\u003chr>\n\u003cp>\u003cem>Built with ❤️ by the AZtomiq Team\u003c/em>\u003c/p>\n"},{"title":"Step-by-Step Guide: Creating Your First Feature","date":"Dec 24, 2025","tag":"Tutorial","lang":"en","readTime":"12 min read","slug":"tutorial-create-feature-en","body":"\u003ch1>🚀 Step-by-Step: Creating a Feature with AZtomiq\u003c/h1>\n\u003cp>Are you new to AZtomiq? This guide will take you by the hand and show you exactly how to build a complete feature from scratch using our &quot;Atomic&quot; architecture.\u003c/p>\n\u003ch2>Step 1: Scaffold using the CLI\u003c/h2>\n\u003cp>Instead of creating folders and files manually, use our built-in command to set up the structure instantly:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run aztomiq tool:create my-tool\n\u003c/code>\u003c/pre>\n\u003cp>This creates the \u003ccode>src/features/my-tool\u003c/code> directory with:\u003c/p>\n\u003cul>\n\u003cli>\u003ccode>tool.yaml\u003c/code>: The brain.\u003c/li>\n\u003cli>\u003ccode>index.ejs\u003c/code>: The structure (HTML).\u003c/li>\n\u003cli>\u003ccode>style.css\u003c/code>: The look (CSS).\u003c/li>\n\u003cli>\u003ccode>script.js\u003c/code>: The brain&#39;s logic (JS).\u003c/li>\n\u003cli>\u003ccode>locales/\u003c/code>: Multi-language support.\u003c/li>\n\u003c/ul>\n\u003ch2>Step 2: Define your Identity (tool.yaml)\u003c/h2>\n\u003cp>Open \u003ccode>tool.yaml\u003c/code> to tell the system what this tool is:\u003c/p>\n\u003cpre>\u003ccode class=\"language-yaml\">id: my-tool # Unique ID\nname: My Awesome Tool # Name shown in menus\ncategory: dev # Category (daily, dev, etc.)\nicon: tool # Icon from Lucide library\nstatus: active # Status (active, beta)\n\u003c/code>\u003c/pre>\n\u003ch2>Step 3: Build the UI (index.ejs)\u003c/h2>\n\u003cp>Write your HTML here. You don&#39;t need \u003ccode>&lt;html&gt;\u003c/code> tags as AZtomiq wraps your content in a global layout automatically.\u003c/p>\n\u003cpre>\u003ccode class=\"language-html\">&lt;div class=&quot;tool-wrap&quot;&gt;\n  &lt;div class=&quot;glass-card&quot;&gt;\n    &lt;h1&gt;Hello AZtomiq!&lt;/h1&gt;\n    &lt;input type=&quot;text&quot; id=&quot;name-input&quot; placeholder=&quot;Enter your name...&quot; /&gt;\n    &lt;button id=&quot;action-btn&quot; class=&quot;btn-primary&quot;&gt;Click Me&lt;/button&gt;\n    &lt;div id=&quot;output&quot;&gt;&lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\u003c/code>\u003c/pre>\n\u003ch2>Step 4: Add Styles (style.css)\u003c/h2>\n\u003cp>Styles here are scoped, meaning they only apply to your specific feature.\u003c/p>\n\u003cpre>\u003ccode class=\"language-css\">.tool-wrap {\n  padding: 2rem;\n  max-width: 600px;\n  margin: 0 auto;\n}\n.glass-card {\n  background: var(--glass-bg); /* Use system CSS variables */\n  backdrop-filter: blur(10px);\n  padding: 2rem;\n  border-radius: 16px;\n}\n\u003c/code>\u003c/pre>\n\u003ch2>Step 5: Implement Logic (script.js)\u003c/h2>\n\u003cp>This is where the magic happens—handling events or API calls:\u003c/p>\n\u003cpre>\u003ccode class=\"language-javascript\">document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {\n  const btn = document.getElementById(&quot;action-btn&quot;);\n  const input = document.getElementById(&quot;name-input&quot;);\n  const display = document.getElementById(&quot;output&quot;);\n\n  btn.addEventListener(&quot;click&quot;, () =&gt; {\n    const val = input.value || &quot;Friend&quot;;\n    display.innerHTML = `&lt;h3&gt;Welcome, ${val}!&lt;/h3&gt;&lt;p&gt;You just built your first feature.&lt;/p&gt;`;\n  });\n});\n\u003c/code>\u003c/pre>\n\u003ch2>Step 6: Multi-language Support\u003c/h2>\n\u003cp>Add \u003ccode>.yaml\u003c/code> files in the \u003ccode>locales/\u003c/code> folder to support different languages. AZtomiq merges these automatically.\u003c/p>\n\u003ch2>Step 7: Build and Preview\u003c/h2>\n\u003cp>Run the dev server to see your changes in real-time:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run dev\n\u003c/code>\u003c/pre>\n\u003cp>Visit \u003ccode>localhost:3000/my-tool/\u003c/code> and see your masterpiece!\u003c/p>\n\u003chr>\n\u003cp>\u003cstrong>Summary:\u003c/strong> Creating a feature in AZtomiq is like building with Lego bricks. You focus on the \u003cstrong>Logic\u003c/strong>, and the core handles the performance, SEO, and shell UI! 🚀\u003c/p>\n"},{"title":"Zero-Backend Architecture: Running Hundreds of Tools for $0","date":"Dec 24, 2025","tag":"Architecture","lang":"en","readTime":"8 min read","slug":"zero-backend-architecture-en","body":"\u003ch1>🚀 Zero-Backend Architecture: Running Hundreds of Tools for $0\u003c/h1>\n\u003cp>In modern web development, the default mindset is often: &quot;If you want to build an app, you need a backend.&quot; But for utility tools, maintaining a bulky server-side system is frequently an expensive mistake.\u003c/p>\n\u003cp>Today, I’m sharing how \u003cstrong>AZtomiq Core\u003c/strong> powers the \u003cstrong>ztools.site\u003c/strong> ecosystem—with over 300 tools—without a single line of server-side code.\u003c/p>\n\u003ch2>1. The Pain of Traditional Backends\u003c/h2>\n\u003cp>Building a multi-tool website (CRM, JSON formatters, tax calculators) with a backend brings several headaches:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Cost\u003c/strong>: Monthly hosting for servers and databases.\u003c/li>\n\u003cli>\u003cstrong>Maintenance\u003c/strong>: Patching OS, managing security, and server upgrades.\u003c/li>\n\u003cli>\u003cstrong>Latency\u003c/strong>: Data travels to the server and back, causing delays.\u003c/li>\n\u003cli>\u003cstrong>Privacy\u003c/strong>: Users worry about uploading sensitive data to your server.\u003c/li>\n\u003c/ul>\n\u003ch2>2. The AZtomiq &quot;Zero-Backend&quot; Solution\u003c/h2>\n\u003cp>AZtomiq redefines tool construction with a \u003cstrong>Privacy-first &amp; Client-side Priority\u003c/strong> philosophy.\u003c/p>\n\u003ch3>⚛️ Atomic Architecture\u003c/h3>\n\u003cp>Every tool is a self-contained &quot;Atom.&quot; Logic (JS), UI (EJS/HTML), and Styles (CSS) are bundled together. When a user visits, the browser only loads exactly what that specific tool needs.\u003c/p>\n\u003ch3>🛡️ 100% Client-side Processing\u003c/h3>\n\u003cp>Instead of sending a 10MB JSON file to a server for formatting, AZtomiq uses the power of the user&#39;s own CPU.\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Speed\u003c/strong>: Instant gratification.\u003c/li>\n\u003cli>\u003cstrong>Security\u003c/strong>: Absolute—because the data never leaves the client&#39;s device.\u003c/li>\n\u003c/ul>\n\u003ch2>3. The Engine of a Million-Dollar Product\u003c/h2>\n\u003cp>If the tools are cars on the road, AZtomiq is the engine under the hood. The ecosystem at \u003cstrong>ztools.site\u003c/strong> is the living proof:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Scalability\u003c/strong>: Want to add 100 more tools? Just create a folder and write the logic. Zero scaling overhead.\u003c/li>\n\u003cli>\u003cstrong>Performance\u003c/strong>: Lighthouse scores hit 100 because there&#39;s no server &quot;waiting time.&quot;\u003c/li>\n\u003cli>\u003cstrong>Cost\u003c/strong>: Powering millions of visitors for $0 in hosting costs (via GitHub Pages/Vercel).\u003c/li>\n\u003c/ul>\n\u003ch2>4. The Future of Utility Frameworks\u003c/h2>\n\u003cp>AZtomiq isn&#39;t just for building &quot;SEO spam&quot; sites. It’s built with strict conventions, professional i18n support, and infinite scalability. It’s a platform for creators who want to build real products for real users without being slowed down by backend technical debt.\u003c/p>\n\u003chr>\n\u003cp>\u003cstrong>Conclusion:\u003c/strong> It&#39;s time to stop overcomplicating things. If you&#39;re planning a utility-based project, embrace the Zero-Backend approach of AZtomiq.\u003c/p>\n\u003cp>👉 Check out \u003ca href=\"https://ztools.site\">ztools.site\u003c/a> to see this strategy in action.\u003c/p>\n"}]
+</script>
+
+<!-- Client-side Router & Content Data -->
+<script>
+  (function () {
+    // 1. Initialize Data
+    const dataEl = document.getElementById('blog-posts-data');
+    let postsArray = [];
+    try {
+      postsArray = JSON.parse(dataEl.textContent || '[]');
+    } catch (e) {
+      console.error('Failed to parse blog posts data', e);
+    }
+
+    window.POSTS = {};
+    postsArray.forEach(post => {
+      window.POSTS[post.slug] = post;
+    });
+
+    // 2. Simple Router
+    window.route = (slug) => {
+      const homeView = document.getElementById('home-view');
+      const articleView = document.getElementById('article-view');
+      const contentDiv = document.getElementById('article-content');
+
+      const blogTitle = `Articles`;
+      const siteTitle = `AZtomiq`;
+
+      if (!slug) {
+        // Show Home
+        homeView.classList.remove('hidden');
+        articleView.classList.add('hidden');
+        if (window.history.pushState) window.history.pushState(null, null, ' ');
+        document.title = `${blogTitle} - ${siteTitle}`;
+        window.scrollTo(0, 0);
+      } else {
+        // Show Article
+        const post = window.POSTS[slug];
+        if (post) {
+          homeView.classList.add('hidden');
+          articleView.classList.remove('hidden');
+
+          document.getElementById('article-title').textContent = post.title || 'Untitled';
+          document.getElementById('article-meta-top').innerHTML = `
+            <span class="post-tag">${post.tag || 'Blog'}</span>
+            <span class="post-date">${post.date || ''}</span>
+            <span class="post-readtime">${post.readTime || ''}</span>
+          `;
+          contentDiv.innerHTML = post.body || '';
+
+          if (window.history.pushState) window.history.pushState(null, null, '#' + slug);
+          document.title = `${post.title || 'Post'} - ${blogTitle}`;
+          window.scrollTo(0, 0);
+        }
+      }
+    };
+
+    // 3. Listeners
+    window.addEventListener('popstate', () => {
+      const hash = window.location.hash.substring(1);
+      window.route(hash);
+    });
+
+    // 4. Initial Load
+    const initialHash = window.location.hash.substring(1);
+    if (initialHash) window.route(initialHash);
+  })();
+</script>
+
+                
+          </main>
+
+          
+            <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h3>
+        AZtomiq
+      </h3>
+      <p>
+        A modern framework for building utility sites.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>
+        Links
+      </h4>
+      <ul>
+        <li><a href="../en/privacy/">
+            Privacy Policy
+          </a></li>
+        <li><a href="../en/terms/">
+            Terms of Service
+          </a></li>
+        <li><a href="../en/changelog/">
+            Versions
+          </a></li>
+        <li><a href="https://github.com/ph4n4n/aztomiq" target="_blank" rel="noopener">
+            GitHub
+          </a></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      <span>
+        © 2025. Built with ❤️.
+      </span>
+      <span>v1.1.1</span>
+    </div>
+  </div>
+</footer>
+              
+
+                
+
+                    <script src="../assets/js/global.js?h=9f6288c7"></script>
+                    <script>
+                      // Initialize Lucide icons
+                      if (window.lucide) {
+                        lucide.createIcons();
+                      }
+                    </script>
+
+                    
+</body>
+
+</html>

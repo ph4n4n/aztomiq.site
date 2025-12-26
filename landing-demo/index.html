@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Demo | 
+  </title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/landing.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="landing-page">
+  <header class="site-header">
+  <div class="header-inner container">
+    <div class="nav-item logo-wrapper">
+      <a href="../?lang=en" class="logo-link">
+        <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon" width="28" height="28">
+        <span class="logo-text">
+          AZtomiq
+        </span>
+      </a>
+
+      <button class="menu-trigger dropdown-toggle" aria-haspopup="true" aria-expanded="false" title="Menu"
+        style="background: none; border: none; padding: 4px; cursor: pointer; display: flex; align-items: center; margin-left: 5px;">
+        <i data-lucide="chevron-down" style="width: 16px; height: 16px; color: var(--text-muted); opacity: 0.6;"></i>
+      </button>
+
+      <div class="dropdown-menu mega-menu">
+  <div class="mega-sidebar">
+    <div class="mega-sidebar-header">
+      <a href="../?lang=en" class="sidebar-logo logo-link">
+        <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon" width="28" height="28">
+        <span class="logo-text">
+          AZtomiq
+        </span>
+      </a>
+    </div>
+    <div class="mega-sidebar-links">
+      <a href="../categories/?lang=en"
+        class="mega-side-link ">
+        <span class="icon-wrap"><i data-lucide="folder-kanban"></i></span>
+        <span class="link-text">
+          Categories
+        </span>
+      </a>
+      <a href="../blog/?lang=en"
+        class="mega-side-link ">
+        <span class="icon-wrap"><i data-lucide="pen-tool"></i></span>
+        <span class="link-text">
+          Articles
+        </span>
+      </a>
+      <a href="../changelog/?lang=en"
+        class="mega-side-link ">
+        <span class="icon-wrap"><i data-lucide="history"></i></span>
+        <span class="link-text">
+          Version History
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mega-content-wrap">
+    
+      <div class="mega-grid">
+        
+          <div class="mega-cat-card accent-blue">
+            <div class="mega-cat-header">
+              <span class="mega-cat-icon"><i data-lucide="wrench"></i></span>
+              <span class="mega-cat-title">
+                General
+              </span>
+            </div>
+            <div class="mega-cat-links">
+              
+                <a href="../hello-world/?lang=en"
+                  class="mega-tool-link mode-standard-only ">
+                  <span class="tool-dot"></span>
+                  <span class="tool-label">
+                    Hello World
+                  </span>
+                  
+                </a>
+                
+            </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Desktop Search Box -->
+      <div class="header-search-box desktop-only" id="header-search-box">
+        <span class="search-box-icon"><i data-lucide="search" style="width: 18px; height: 18px;"></i></span>
+        <input type="text" class="header-search-input"
+          placeholder="Search... (Ctrl + K)" readonly>
+        <kbd>Ctrl+K</kbd>
+      </div>
+
+      <a href="../categories/?lang=en" class="btn-icon"
+        title="Categories" aria-label="Categories">
+        <i data-lucide="grid-3x3"></i>
+      </a>
+
+      <button id="search-btn-mobile" class="btn-icon search-trigger mobile-only"
+        title="Search" aria-label="Search">
+        <i data-lucide="search"></i>
+      </button>
+
+      <a href="../landing-demo/?lang=vi"
+        class="lang-switch" title="Switch Language" aria-label="Tiếng Việt">
+        <span aria-hidden="true">
+          🇻🇳
+        </span>
+      </a>
+      <button id="mode-toggle" class="mode-toggle-btn" title="Advanced Mode"
+        aria-label="Toggle User Mode">
+        <span class="mode-text">
+          Standard
+        </span>
+        <div class="mode-switch">
+          <div class="mode-slider">
+            <span class="mode-icon"><i data-lucide="zap" style="width: 12px; height: 12px;"></i></span>
+          </div>
+        </div>
+        <span class="mode-text">
+          Advanced
+        </span>
+      </button>
+
+      <a href="https://github.com/ph4n4n/aztomiq" target="_blank" rel="noopener" class="btn-icon" title="GitHub Repository"
+        aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+
+      <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Overlay / Modal (Reusable by hidden header mode) -->
+<div id="search-modal" class="search-modal">
+  <div class="search-overlay"></div>
+  <div class="search-container">
+    <div class="search-header">
+      <span class="search-icon" aria-hidden="true"><i data-lucide="search"></i></span>
+      <input type="text" id="search-input" placeholder="Search... (Ctrl + K)" autocomplete="off"
+        aria-label="Search... (Ctrl + K)">
+      <button id="close-search" class="close-search"
+        aria-label="Close search">&times;</button>
+    </div>
+    <div id="search-results" class="search-results">
+      <!-- Results will be injected here -->
+    </div>
+    <div class="search-footer">
+      <div class="search-hints">
+        <span><kbd>↵</kbd> Select</span>
+        <span><kbd>↑↓</kbd> Navigate</span>
+        <span><kbd>esc</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Embed i18n data for client-side JS -->
+<script id="i18n-data" type="application/json">
+  {
+    "search_no_results": "No results found for"
+  }
+</script>
+
+<!-- Embed tools data for client-side search -->
+<script id="tools-data" type="application/json">
+  
+  [{"id":"blog","link":"../en/blog/","icon":"pen-tool","title":"Articles","desc":"Behind the scenes, technical insights, and documentation for the AZtomiq ecosystem.","category":"home.cats.legacy.title"},{"id":"hello-world","link":"../en/hello-world/","icon":"smile","title":"Hello World","desc":"A simple example tool to get you started.","category":"General"}]
+</script>
+</header>
+
+    <main>
+      <section class="hero-section">
+  <div class="hero-content">
+    <span class="hero-badge">New: AZtomiq Framework v1.0.8</span>
+    <h1 class="hero-title">
+      AZtomiq - Modern Framework
+    </h1>
+    <p class="hero-description">The ultimate SSG framework for building multi-tool platforms, documentation sites, and
+      high-performance landing pages.</p>
+    <div class="cta-group">
+      <a href="#features" class="btn-primary-landing">Get Started Free</a>
+      <a href="#" class="btn-secondary-landing">View Documentation</a>
+    </div>
+  </div>
+</section>
+        <section id="features" class="section-padding">
+  <div class="section-header">
+    <h2 class="section-title">Built for Performance</h2>
+    <p class="hero-description" style="font-size: 1.1rem">Everything you need to ship high-quality web applications in
+      record time.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><i data-lucide="zap"></i></div>
+      <h3 class="feature-title">Lightning Fast</h3>
+      <p class="feature-desc">Pre-rendered static pages ensure zero loading lag and perfect Lighthouse scores by
+        default.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon"><i data-lucide="layers"></i></div>
+      <h3 class="feature-title">Atomic Design</h3>
+      <p class="feature-desc">Modular features and components that are easy to maintain, override, and scale.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon"><i data-lucide="shield"></i></div>
+      <h3 class="feature-title">SEO Ready</h3>
+      <p class="feature-desc">Automatic sitemap, robots.txt, and metadata generation tailored for search engines.</p>
+    </div>
+  </div>
+</section>
+          <section id="pricing" class="section-padding" style="background: rgba(0,0,0,0.2)">
+  <div class="section-header">
+    <h2 class="section-title">Honest Pricing</h2>
+    <p class="hero-description" style="font-size: 1.1rem">Choose the plan that fits your ambition.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>Starter</h3>
+      <div class="price-value">$0</div>
+      <span class="price-period">Forever free for hobbyists</span>
+      <ul class="price-features">
+        <li><i data-lucide="check"></i> Core Framework</li>
+        <li><i data-lucide="check"></i> 5 Tools / Features</li>
+        <li><i data-lucide="check"></i> Community Support</li>
+      </ul>
+      <a href="#" class="btn-secondary-landing">Get Started</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <span class="popular-badge">Recommended</span>
+      <h3>Pro</h3>
+      <div class="price-value">$19</div>
+      <span class="price-period">per month, billed yearly</span>
+      <ul class="price-features">
+        <li><i data-lucide="check"></i> Everything in Starter</li>
+        <li><i data-lucide="check"></i> Unlimited Tools</li>
+        <li><i data-lucide="check"></i> Custom Domain</li>
+        <li><i data-lucide="check"></i> Priority Email Support</li>
+      </ul>
+      <a href="#" class="btn-primary-landing">Go Pro Now</a>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h3>
+        AZtomiq
+      </h3>
+      <p>
+        A modern framework for building utility sites.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>
+        Links
+      </h4>
+      <ul>
+        <li><a href="../en/privacy/">
+            Privacy Policy
+          </a></li>
+        <li><a href="../en/terms/">
+            Terms of Service
+          </a></li>
+        <li><a href="../en/changelog/">
+            Versions
+          </a></li>
+        <li><a href="https://github.com/ph4n4n/aztomiq" target="_blank" rel="noopener">
+            GitHub
+          </a></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      <span>
+        © 2025. Built with ❤️.
+      </span>
+      <span>v1.1.1</span>
+    </div>
+  </div>
+</footer>
+
+      <script>
+        lucide.createIcons();
+        // Simple scroll header effect
+        window.addEventListener('scroll', () => {
+          const header = document.querySelector('.site-header');
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        });
+      </script>
+</body>
+
+</html>

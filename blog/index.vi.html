@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  AZtomiq - Nền tảng hiện đại
+</title>
+
+  <meta name="description" content="Hậu trường, kỹ thuật và tài liệu hướng dẫn xây dựng hệ sinh thái AZtomiq.">
+  
+    <meta name="keywords" content="free tools, online utility, aztomiq, ss-framework">
+    
+
+      <!-- Canonical & Language Strategy -->
+      
+        <link rel="canonical" href="https://aztomiq.vercel.app/blog/" />
+        <link rel="alternate" hreflang="vi" href="https://aztomiq.vercel.app/blog/" />
+        <link rel="alternate" hreflang="en" href="https://aztomiq.vercel.app/blog/?lang=en" />
+        <link rel="alternate" hreflang="x-default" href="https://aztomiq.vercel.app/blog/?lang=en" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://aztomiq.vercel.app/blog/" />
+        <meta property="og:title" content="AZtomiq - Nền tảng hiện đại" />
+        <meta property="og:description" content="Hậu trường, kỹ thuật và tài liệu hướng dẫn xây dựng hệ sinh thái AZtomiq." />
+        <meta property="og:image" content="https://aztomiq.vercel.app/assets/images/og-default.png" />
+        <meta property="og:site_name" content="AZtomiq" />
+        <meta property="og:locale" content="vi_VN" />
+        <meta property="og:locale:alternate" content="en_US" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://aztomiq.vercel.app/blog/" />
+        <meta name="twitter:title" content="AZtomiq - Nền tảng hiện đại" />
+        <meta name="twitter:description" content="Hậu trường, kỹ thuật và tài liệu hướng dẫn xây dựng hệ sinh thái AZtomiq." />
+        <meta name="twitter:image" content="https://aztomiq.vercel.app/assets/images/og-default.png" />
+
+        <!-- Author & Copyright -->
+        <meta name="author" content="AZtomiq Team" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="../assets/css/global.css?h=94513826">
+        
+          <link rel="stylesheet" href="../assets/features/blog/style.css?h=c9913452">
+          
+            
+                    <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+                    <link rel="manifest" href="../manifest.json">
+
+                    <!-- Lucide Icons Library -->
+                    <script src="https://unpkg.com/lucide@latest"></script>
+
+                    <script src="../assets/js/user-mode.js?h=7713ad69"></script>
+
+                    <!-- Dark Mode Script (Blocking) -->
+                    <script>
+                      const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                      document.documentElement.setAttribute('data-theme', savedTheme);
+                    </script>
+
+                    <!-- Vercel Analytics (Commented to fix 404 in non-Vercel environments)
+  <script>
+    window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/analytics/script.js"></script>
+  -->
+
+                    <!-- Schema.org Structured Data -->
+                    
+
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AZtomiq",
+    "url": "https://aztomiq.vercel.app",
+    "description": "Bộ khung A-Z hiện đại để xây dựng trang web tiện ích.",
+    "inLanguage": "vi-VN",
+    "author": {
+      "@type": "Person",
+      "name": "AZtomiq Team"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aztomiq.vercel.app/vi/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bài viết",
+        "item": "https://aztomiq.vercel.app/vi/blog/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bài viết",
+    "description": "Hậu trường, kỹ thuật và tài liệu hướng dẫn xây dựng hệ sinh thái AZtomiq.",
+    "url": "https://aztomiq.vercel.app/vi/blog/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Works on all modern browsers (Chrome, Firefox, Safari, Edge).",
+    "softwareVersion": "1.0.0",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "AZtomiq Team"
+    },
+    "inLanguage": "vi-VN",
+    "image": "https://aztomiq.vercel.app/assets/images/logo.svg"
+  }
+]
+</script>
+</head>
+
+<body class="">
+  
+      <header class="site-header">
+  <div class="header-inner container">
+    <div class="nav-item logo-wrapper">
+      <a href="../" class="logo-link">
+        <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon" width="28" height="28">
+        <span class="logo-text">
+          AZtomiq
+        </span>
+      </a>
+
+      <button class="menu-trigger dropdown-toggle" aria-haspopup="true" aria-expanded="false" title="Menu"
+        style="background: none; border: none; padding: 4px; cursor: pointer; display: flex; align-items: center; margin-left: 5px;">
+        <i data-lucide="chevron-down" style="width: 16px; height: 16px; color: var(--text-muted); opacity: 0.6;"></i>
+      </button>
+
+      <div class="dropdown-menu mega-menu">
+  <div class="mega-sidebar">
+    <div class="mega-sidebar-header">
+      <a href="../" class="sidebar-logo logo-link">
+        <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon" width="28" height="28">
+        <span class="logo-text">
+          AZtomiq
+        </span>
+      </a>
+    </div>
+    <div class="mega-sidebar-links">
+      <a href="../categories/"
+        class="mega-side-link ">
+        <span class="icon-wrap"><i data-lucide="folder-kanban"></i></span>
+        <span class="link-text">
+          Danh mục
+        </span>
+      </a>
+      <a href="../blog/"
+        class="mega-side-link active">
+        <span class="icon-wrap"><i data-lucide="pen-tool"></i></span>
+        <span class="link-text">
+          Bài viết
+        </span>
+      </a>
+      <a href="../changelog/"
+        class="mega-side-link ">
+        <span class="icon-wrap"><i data-lucide="history"></i></span>
+        <span class="link-text">
+          Nhật ký thay đổi
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mega-content-wrap">
+    
+      <div class="mega-grid">
+        
+          <div class="mega-cat-card accent-blue">
+            <div class="mega-cat-header">
+              <span class="mega-cat-icon"><i data-lucide="wrench"></i></span>
+              <span class="mega-cat-title">
+                Tiện ích
+              </span>
+            </div>
+            <div class="mega-cat-links">
+              
+                <a href="../hello-world/"
+                  class="mega-tool-link mode-standard-only ">
+                  <span class="tool-dot"></span>
+                  <span class="tool-label">
+                    Chào Thế Giới
+                  </span>
+                  
+                </a>
+                
+            </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Desktop Search Box -->
+      <div class="header-search-box desktop-only" id="header-search-box">
+        <span class="search-box-icon"><i data-lucide="search" style="width: 18px; height: 18px;"></i></span>
+        <input type="text" class="header-search-input"
+          placeholder="Tìm kiếm... (Ctrl + K)" readonly>
+        <kbd>Ctrl+K</kbd>
+      </div>
+
+      <a href="../categories/" class="btn-icon"
+        title="Danh mục" aria-label="Categories">
+        <i data-lucide="grid-3x3"></i>
+      </a>
+
+      <button id="search-btn-mobile" class="btn-icon search-trigger mobile-only"
+        title="Tìm kiếm" aria-label="Search">
+        <i data-lucide="search"></i>
+      </button>
+
+      <a href="../blog/?lang=en"
+        class="lang-switch" title="Switch Language" aria-label="English">
+        <span aria-hidden="true">
+          🇺🇸
+        </span>
+      </a>
+      <button id="mode-toggle" class="mode-toggle-btn" title="Chế độ Nâng cao"
+        aria-label="Toggle User Mode">
+        <span class="mode-text">
+          Standard
+        </span>
+        <div class="mode-switch">
+          <div class="mode-slider">
+            <span class="mode-icon"><i data-lucide="zap" style="width: 12px; height: 12px;"></i></span>
+          </div>
+        </div>
+        <span class="mode-text">
+          Advanced
+        </span>
+      </button>
+
+      <a href="https://github.com/ph4n4n/aztomiq" target="_blank" rel="noopener" class="btn-icon" title="GitHub Repository"
+        aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+
+      <button id="theme-toggle" class="btn-icon" aria-label="Toggle Dark Mode">
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Overlay / Modal (Reusable by hidden header mode) -->
+<div id="search-modal" class="search-modal">
+  <div class="search-overlay"></div>
+  <div class="search-container">
+    <div class="search-header">
+      <span class="search-icon" aria-hidden="true"><i data-lucide="search"></i></span>
+      <input type="text" id="search-input" placeholder="Tìm kiếm... (Ctrl + K)" autocomplete="off"
+        aria-label="Tìm kiếm... (Ctrl + K)">
+      <button id="close-search" class="close-search"
+        aria-label="Đóng tìm kiếm">&times;</button>
+    </div>
+    <div id="search-results" class="search-results">
+      <!-- Results will be injected here -->
+    </div>
+    <div class="search-footer">
+      <div class="search-hints">
+        <span><kbd>↵</kbd> Select</span>
+        <span><kbd>↑↓</kbd> Navigate</span>
+        <span><kbd>esc</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Embed i18n data for client-side JS -->
+<script id="i18n-data" type="application/json">
+  {
+    "search_no_results": "Không tìm thấy kết quả cho"
+  }
+</script>
+
+<!-- Embed tools data for client-side search -->
+<script id="tools-data" type="application/json">
+  
+  [{"id":"blog","link":"../vi/blog/","icon":"pen-tool","title":"Bài viết","desc":"Hậu trường, kỹ thuật và tài liệu hướng dẫn xây dựng hệ sinh thái AZtomiq.","category":"home.cats.legacy.title"},{"id":"hello-world","link":"../vi/hello-world/","icon":"smile","title":"Chào Thế Giới","desc":"Công cụ ví dụ đơn giản để bạn bắt đầu.","category":"Tiện ích"}]
+</script>
+</header>
+        
+
+          <main class="container">
+            
+  <nav class="breadcrumbs-container" aria-label="Breadcrumb">
+    <ol class="breadcrumbs-list">
+      <li class="breadcrumb-item">
+        <a href="../vi/" class="breadcrumb-link" title="Trang chủ">
+          <i data-lucide="home"></i>
+        </a>
+      </li>
+
+      
+
+          <li class="breadcrumb-separator">
+            <i data-lucide="chevron-right"></i>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <span class="breadcrumb-current">
+              Bài viết
+            </span>
+          </li>
+    </ol>
+  </nav>
+
+  <style>
+    .breadcrumbs-container {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .breadcrumbs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .breadcrumb-link i {
+      width: 14px;
+      height: 14px;
+    }
+
+    .breadcrumb-link:hover {
+      color: var(--primary-color);
+    }
+
+    .breadcrumb-separator {
+      color: var(--border-color);
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb-separator i {
+      width: 14px;
+      height: 14px;
+    }
+
+    .breadcrumb-current {
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 600px) {
+      .breadcrumbs-container {
+        padding: 0.75rem 0;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+  
+              <div class="blog-container">
+
+  <!-- HOME VIEW: List of Articles -->
+  <div id="home-view" class="blog-view">
+    <header class="blog-hero">
+      <div class="hero-chip">✍️ Bài viết
+      </div>
+      <h1 class="blog-title-main">
+        Bài viết & Technical Insights
+      </h1>
+      <p class="blog-subtitle">
+        Hậu trường, kỹ thuật và tài liệu hướng dẫn xây dựng hệ sinh thái AZtomiq.
+      </p>
+    </header>
+
+    <div class="post-list">
+      
+        
+          
+            <div onclick="route('technical-documentation')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Docs
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    10 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Hướng dẫn kỹ thuật &amp; Core Architecture
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+            <div onclick="route('tutorial-create-feature-vi')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Tutorial
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    15 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Hướng dẫn tạo Feature từ A-Z cho người mới
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+            <div onclick="route('welcome-to-aztomiq')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Community
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    4 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Chào mừng đến với hệ sinh thái AZtomiq
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+            <div onclick="route('zero-backend-architecture-vi')" class="post-card">
+              <div class="post-card-content">
+                <div class="post-meta">
+                  <span class="post-tag">
+                    Architecture
+                  </span>
+                  <span class="post-date">
+                    Dec 24, 2025
+                  </span>
+                  <span class="post-readtime">
+                    10 min read
+                  </span>
+                </div>
+                <h2 class="post-title">
+                  Kiến trúc Zero-Backend: Cách vận hành hàng trăm công cụ với chi phí $0
+                </h2>
+                <p class="post-excerpt">
+                  Discover technical insights and stories from our dev team...
+                </p>
+                <div class="post-footer">
+                  <span class="read-more">Read Full Story ➔</span>
+                </div>
+              </div>
+            </div>
+            
+              
+    </div>
+  </div>
+
+  <!-- ARTICLE VIEW: Dynamic Content Container -->
+  <div id="article-view" class="blog-view hidden">
+    <div class="article-nav">
+      <button onclick="route('')" class="article-back">
+        <span class="back-icon">←</span>
+        <span>
+          Quay lại
+        </span>
+      </button>
+    </div>
+
+    <article class="article-wrapper">
+      <header class="article-header">
+        <div id="article-meta-top" class="post-meta"></div>
+        <h1 id="article-title" class="article-title-text"></h1>
+      </header>
+
+      <div id="article-content" class="article-content markdown-body">
+        <!-- Content Injected Here -->
+      </div>
+
+      <footer class="article-footer">
+        <div class="footer-divider"></div>
+        <button onclick="route('')" class="btn-outline">
+          Quay lại
+        </button>
+      </footer>
+    </article>
+  </div>
+
+</div>
+
+<!-- Hidden Data Source -->
+<script id="blog-posts-data" type="application/json">
+  [{"title":"Hướng dẫn kỹ thuật & Core Architecture","date":"Dec 24, 2025","tag":"Docs","lang":"vi","readTime":"10 min read","slug":"technical-documentation","body":"\u003cp>Chào mừng bạn đến với tài liệu kỹ thuật chính thức của \u003cstrong>AZtomiq\u003c/strong>. Bài viết này được trích xuất trực tiếp từ file \u003ccode>README.md\u003c/code> của dự án để bạn có cái nhìn tổng quan nhất về hệ thống.\u003c/p>\n\u003chr>\n\u003ch1>⚛️ AZtomiq\u003c/h1>\n\u003cp>A high-performance, \u003cstrong>privacy-first\u003c/strong>, and ultra-modular multi-tool website framework. Built with a passion for simplicity and speed.\u003c/p>\n\u003chr>\n\u003ch2>🌟 Tại sao nên chọn AZtomiq?\u003c/h2>\n\u003cp>AZtomiq không chỉ là một trình tạo tĩnh (static site generator) thông thường. Nó là một \u003cstrong>Hệ sinh thái\u003c/strong> được thiết kế để xây dựng các bộ công cụ tiện ích chuyên nghiệp.\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>⚛️ Kiến trúc Nguyên tử (Atomic Architecture)\u003c/strong>: Mỗi tính năng là một &quot;Nguyên tử&quot; tự chứa. Không có phụ thuộc toàn cục, khả năng di động tối đa.\u003c/li>\n\u003cli>\u003cstrong>🛡️ Quyền riêng tư (Privacy by Design)\u003c/strong>: Xử lý 100% phía Client. Không có dữ liệu nào rời khỏi trình duyệt của người dùng.\u003c/li>\n\u003cli>\u003cstrong>🌍 Sẵn sàng cho i18n\u003c/strong>: Hỗ trợ đa ngôn ngữ tích hợp sẵn với khả năng gộp bản dịch nguyên tử.\u003c/li>\n\u003cli>\u003cstrong>⚡ Tốc độ cực nhanh\u003c/strong>: Không có JS framework nặng nề. Được cung cấp bởi Vanilla JS và các template EJS tối ưu.\u003c/li>\n\u003cli>\u003cstrong>📱 PWA hiện đại\u003c/strong>: Khả năng ngoại tuyến hoàn toàn với việc tạo Service Worker tự động.\u003c/li>\n\u003c/ul>\n\u003chr>\n\u003ch2>🏗️ Kiến trúc lõi (Core Architecture)\u003c/h2>\n\u003cpre>\u003ccode class=\"language-text\">.\n├── bin/              # 🛠️ Main CLI entry point (aztomiq command)\n├── docs/             # 📚 Documentation &amp; Guides\n├── scripts/          # ⚙️ Modular build logic (Pages, Assets, Cache)\n├── src/\n│   ├── assets/       # 🎨 Global Design System (CSS/JS)\n│   ├── data/         # 📊 Global site &amp; category metadata\n│   ├── features/     # ⚛️ Atomic Tools (The heart of AZtomiq)\n│   ├── includes/     # 🧩 Reusable EJS components\n│   ├── locales/      # 🌍 System-wide translations\n│   ├── pages/        # 📄 Static landing &amp; system pages\n│   └── templates/    # 🧬 SEO &amp; PWA generators\n└── package.json\n\u003c/code>\u003c/pre>\n\u003chr>\n\u003ch2>🚀 Bắt đầu nhanh (Quick Start)\u003c/h2>\n\u003ch3>1. Cài đặt\u003c/h3>\n\u003cpre>\u003ccode class=\"language-bash\">git clone https://github.com/ph4n4n/aztomiq.git\ncd aztomiq\nnpm install\n\u003c/code>\u003c/pre>\n\u003ch3>2. Phát triển (Development)\u003c/h3>\n\u003cp>Chạy watcher và server cục bộ:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run dev\n\u003c/code>\u003c/pre>\n\u003ch3>3. Tạo công cụ đầu tiên của bạn\u003c/h3>\n\u003cp>Sử dụng CLI của chúng tôi để tạo khung tính năng mới ngay lập tức:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run aztomiq tool:create my-awesome-tool\n\u003c/code>\u003c/pre>\n\u003ch3>4. Build cho Production\u003c/h3>\n\u003cp>Tạo trang tĩnh trong thư mục \u003ccode>dist/\u003c/code>:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run build\n\u003c/code>\u003c/pre>\n\u003chr>\n\u003ch2>🤝 Tham gia đóng góp\u003c/h2>\n\u003cp>Chúng tôi luôn chào đón các đóng góp! Nếu bạn có ý tưởng cho một công cụ thú vị:\u003c/p>\n\u003col>\n\u003cli>Fork dự án.\u003c/li>\n\u003cli>Tạo Feature Branch (\u003ccode>git checkout -b feature/AmazingTool\u003c/code>).\u003c/li>\n\u003cli>Tạo công cụ của bạn bằng \u003ccode>npm run aztomiq tool:create\u003c/code>.\u003c/li>\n\u003cli>Commit thay đổi.\u003c/li>\n\u003cli>Push bài viết lên Branch.\u003c/li>\n\u003cli>Mở một Pull Request.\u003c/li>\n\u003c/ol>\n\u003chr>\n\u003cp>\u003cem>Cảm ơn bạn đã quan tâm đến AZtomiq!\u003c/em>\u003c/p>\n"},{"title":"Hướng dẫn tạo Feature từ A-Z cho người mới","date":"Dec 24, 2025","tag":"Tutorial","lang":"vi","readTime":"15 min read","slug":"tutorial-create-feature-vi","body":"\u003ch1>🚀 Hướng dẫn tạo Feature từ A-Z với AZtomiq\u003c/h1>\n\u003cp>Bạn là người mới và muốn build một công cụ trên nền tảng AZtomiq? Đừng lo, bài viết này sẽ &quot;cầm tay chỉ việc&quot; giúp bạn tạo ra một Feature hoàn chỉnh chỉ trong vài phút.\u003c/p>\n\u003ch2>Bước 1: Khởi tạo bằng CLI\u003c/h2>\n\u003cp>Thay vì tạo tay từng folder, AZtomiq cung cấp lệnh để scaffold mọi thứ cần thiết. Mở terminal và chạy:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run aztomiq tool:create hello-world\n\u003c/code>\u003c/pre>\n\u003cp>Hệ thống sẽ tự đẻ ra folder \u003ccode>src/features/hello-world\u003c/code> với cấu trúc:\u003c/p>\n\u003cul>\n\u003cli>\u003ccode>tool.yaml\u003c/code>: Cấu hình của công cụ.\u003c/li>\n\u003cli>\u003ccode>index.ejs\u003c/code>: Giao diện (HTML).\u003c/li>\n\u003cli>\u003ccode>style.css\u003c/code>: Thẩm mỹ (CSS).\u003c/li>\n\u003cli>\u003ccode>script.js\u003c/code>: Phụ trách logic (JS).\u003c/li>\n\u003cli>\u003ccode>locales/\u003c/code>: Đa ngôn ngữ.\u003c/li>\n\u003c/ul>\n\u003ch2>Bước 2: Khai báo &quot;Danh tính&quot; (tool.yaml)\u003c/h2>\n\u003cp>Mở \u003ccode>tool.yaml\u003c/code>, đây là nơi bạn định nghĩa công cụ của mình với hệ thống:\u003c/p>\n\u003cpre>\u003ccode class=\"language-yaml\">id: hello-world # ID duy nhất, không trùng lặp\nname: Xin Chào World # Tên hiển thị trên Menu\ncategory: daily # Nhóm (daily, dev, finance...)\nicon: smile # Tên icon từ thư viện Lucide\nstatus: active # Hiện trạng (active, beta)\n\u003c/code>\u003c/pre>\n\u003ch2>Bước 3: Xây dựng giao diện (index.ejs)\u003c/h2>\n\u003cp>Mở \u003ccode>index.ejs\u003c/code>, bạn code HTML vào đây. Lưu ý: Bạn không cần viết \u003ccode>&lt;html&gt;\u003c/code> hay \u003ccode>&lt;body&gt;\u003c/code> vì AZtomiq đã lo phần &quot;vỏ&quot; (Layout) rồi.\u003c/p>\n\u003cpre>\u003ccode class=\"language-html\">&lt;div class=&quot;hello-container&quot;&gt;\n  &lt;div class=&quot;glass-card&quot;&gt;\n    &lt;h1&gt;Chào mừng bạn!&lt;/h1&gt;\n    &lt;input type=&quot;text&quot; id=&quot;user-input&quot; placeholder=&quot;Nhập tên bồ vào đây...&quot; /&gt;\n    &lt;button id=&quot;greet-btn&quot; class=&quot;btn-primary&quot;&gt;Nhấn đi!&lt;/button&gt;\n    &lt;p id=&quot;result-text&quot;&gt;&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\u003c/code>\u003c/pre>\n\u003ch2>Bước 4: Thêm &quot;Muối&quot; cho giao diện (style.css)\u003c/h2>\n\u003cp>CSS ở đây có tính \u003cstrong>scoping\u003c/strong>, tức là nó chỉ ảnh hưởng đến feature này thôi.\u003c/p>\n\u003cpre>\u003ccode class=\"language-css\">.hello-container {\n  display: flex;\n  justify-content: center;\n  padding: 3rem;\n}\n.glass-card {\n  background: var(--glass-bg); /* Dùng biến CSS hệ thống */\n  backdrop-filter: blur(10px);\n  border: 1px solid var(--glass-border);\n  padding: 2rem;\n  border-radius: 20px;\n}\n\u003c/code>\u003c/pre>\n\u003ch2>Bước 5: Viết Logic (script.js)\u003c/h2>\n\u003cp>Đây là nơi xử lý các sự kiện click, tính toán hoặc gọi API:\u003c/p>\n\u003cpre>\u003ccode class=\"language-javascript\">document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {\n  const btn = document.getElementById(&quot;greet-btn&quot;);\n  const input = document.getElementById(&quot;user-input&quot;);\n  const result = document.getElementById(&quot;result-text&quot;);\n\n  btn.addEventListener(&quot;click&quot;, () =&gt; {\n    const name = input.value || &quot;Người lạ&quot;;\n    result.innerText = `Chào ${name}! Bạn vừa tạo thành công feature đầu tiên!`;\n  });\n});\n\u003c/code>\u003c/pre>\n\u003ch2>Bước 6: Đa ngôn ngữ (Locales)\u003c/h2>\n\u003cp>Nếu muốn công cụ của bạn hỗ trợ cả tiếng Anh lẫn tiếng Việt, hãy vào folder \u003ccode>locales/\u003c/code> tạo các file \u003ccode>.yaml\u003c/code> tương ứng. AZtomiq sẽ tự động gộp chúng vào hệ thống dịch của toàn trang.\u003c/p>\n\u003ch2>Bước 7: Kiểm tra thành quả\u003c/h2>\n\u003cp>Chạy lệnh dev để xem sự thay đổi ngay lập tức:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run dev\n\u003c/code>\u003c/pre>\n\u003cp>Truy cập \u003ccode>localhost:3000/hello-world/\u003c/code> và tận hưởng!\u003c/p>\n\u003chr>\n\u003cp>\u003cstrong>Kết luận:\u003c/strong> Build feature trên AZtomiq giống như lắp ghép Lego. Bạn chỉ tập trung vào \u003cstrong>Logic của công cụ\u003c/strong>, còn giao diện, menu, SEO và tốc độ đã có \u003cstrong>AZtomiq\u003c/strong> lo liệu! 😎\u003c/p>\n"},{"title":"Chào mừng đến với hệ sinh thái AZtomiq","date":"Dec 24, 2025","tag":"Community","lang":"vi","readTime":"4 min read","slug":"welcome-to-aztomiq","body":"\u003ch1>⚛️ AZtomiq: Kỷ nguyên mới của các công cụ tiện ích\u003c/h1>\n\u003cp>Chào mừng các bạn đến với \u003cstrong>AZtomiq\u003c/strong>, một bộ khung (framework) mã nguồn mở, hiện đại và mạnh mẽ được thiết kế chuyên biệt để xây dựng các trang web đa công cụ (multi-tool) với hiệu suất cực cao và triết lý \u003cstrong>Privacy-first\u003c/strong>.\u003c/p>\n\u003ch2>🌟 Tại sao AZtomiq ra đời?\u003c/h2>\n\u003cp>Trong thế giới web đầy rẫy những framework nặng nề và phức tạp, AZtomiq chọn một hướng đi khác: \u003cstrong>Sự tinh khiết của Vanilla JS và sức mạnh của Kiến trúc Nguyên tử (Atomic Architecture).\u003c/strong>\u003c/p>\n\u003cp>Chúng tôi tin rằng các công cụ tiện ích - dù là tính toán tài chính, xử lý văn bản hay công cụ lập trình - cần phải:\u003c/p>\n\u003col>\n\u003cli>\u003cstrong>Nhanh\u003c/strong>: Tải trang tức thì, phản hồi ngay lập tức.\u003c/li>\n\u003cli>\u003cstrong>Riêng tư\u003c/strong>: Mọi dữ liệu xử lý 100% tại trình duyệt người dùng (Client-side).\u003c/li>\n\u003cli>\u003cstrong>Mô-đun hóa\u003c/strong>: Mỗi công cụ là một thực thể độc lập, dễ dàng bảo trì và mở rộng.\u003c/li>\n\u003c/ol>\n\u003ch2>🏗️ Kiến trúc Nguyên tử (Atomic Architecture)\u003c/h2>\n\u003cp>Mọi công cụ trong AZtomiq được coi là một &quot;Atom&quot; (Nguyên tử). Một folder feature điển hình bao gồm:\u003c/p>\n\u003cul>\n\u003cli>\u003ccode>tool.yaml\u003c/code>: Bộ não cấu hình.\u003c/li>\n\u003cli>\u003ccode>index.ejs\u003c/code>: Khung xương giao diện.\u003c/li>\n\u003cli>\u003ccode>script.js\u003c/code> &amp; \u003ccode>style.css\u003c/code>: Cơ bắp và diện mạo.\u003c/li>\n\u003cli>\u003ccode>locales/\u003c/code>: Giọng nói đa ngôn ngữ.\u003c/li>\n\u003c/ul>\n\u003cp>Cách tiếp cận này giúp các nhà phát triển có thể tạo ra một công cụ mới chỉ trong vài phút bằng lệnh:\u003c/p>\n\u003cpre>\u003ccode class=\"language-bash\">npm run aztomiq tool:create [tên-công-cụ]\n\u003c/code>\u003c/pre>\n\u003ch2>🛡️ Quyền riêng tư là ưu tiên số 1\u003c/h2>\n\u003cp>Khác với các dịch vụ trực tuyến truyền thống gửi dữ liệu về server để xử lý, AZtomiq tận dụng sức mạnh của trình duyệt hiện đại. Khi bạn tính toán bảng lương hay định dạng một tệp JSON hàng nghìn dòng, dữ liệu đó \u003cstrong>không bao giờ rời khỏi thiết bị của bạn\u003c/strong>.\u003c/p>\n\u003ch2>🚀 Tương lai của AZtomiq\u003c/h2>\n\u003cp>Chúng tôi đang không ngừng hoàn thiện hệ sinh thái với:\u003c/p>\n\u003cul>\n\u003cli>Hệ thống \u003cstrong>Smart Caching\u003c/strong> cho trải nghiệm PWA mượt mà.\u003c/li>\n\u003cli>Thư viện linh kiện UI (Design System) nhất quán.\u003c/li>\n\u003cli>Khả năng tùy biến giao diện cấp cao (Standard &amp; Advanced modes).\u003c/li>\n\u003c/ul>\n\u003cp>Hãy cùng chúng tôi xây dựng một web nhanh hơn, an toàn hơn và tiện lợi hơn!\u003c/p>\n\u003chr>\n\u003cp>\u003cem>Đội ngũ phát triển AZtomiq\u003c/em>\u003c/p>\n"},{"title":"Kiến trúc Zero-Backend: Cách vận hành hàng trăm công cụ với chi phí $0","date":"Dec 24, 2025","tag":"Architecture","lang":"vi","readTime":"10 min read","slug":"zero-backend-architecture-vi","body":"\u003ch1>🚀 Kiến trúc Zero-Backend: Cách vận hành hàng trăm công cụ với chi phí $0\u003c/h1>\n\u003cp>Trong thế giới phát triển web hiện đại, chúng ta thường mặc định rằng: &quot;Muốn làm App thì phải có Backend&quot;. Nhưng thực tế, đối với các công cụ tiện ích (Utility Tools), việc duy trì một hệ thống Backend cồng kềnh đôi khi là một sai lầm tốn kém.\u003c/p>\n\u003cp>Hôm nay, tôi sẽ chia sẻ về cách \u003cstrong>AZtomiq Core\u003c/strong> vận hành hệ sinh thái \u003cstrong>ztools.site\u003c/strong> với hơn 300 công cụ mà không cần đến một dòng code server-side nào.\u003c/p>\n\u003ch2>1. Nỗi đau của Backend truyền thống\u003c/h2>\n\u003cp>Khi bồ xây dựng một trang web đa công cụ (như CRM, trình định dạng JSON, tính toán thuế...), việc dùng Backend sẽ kéo theo:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Chi phí\u003c/strong>: Thuê server, database hàng tháng.\u003c/li>\n\u003cli>\u003cstrong>Bảo trì\u003c/strong>: Phải update OS, patch bảo mật cho server.\u003c/li>\n\u003cli>\u003cstrong>Tốc độ\u003c/strong>: Dữ liệu phải bay từ trình duyệt lên server rồi mới trả về kết quả (Network Latency).\u003c/li>\n\u003cli>\u003cstrong>Quyền riêng tư\u003c/strong>: Người dùng lo lắng khi phải upload dữ liệu nhạy cảm lên server của bồ.\u003c/li>\n\u003c/ul>\n\u003ch2>2. Giải pháp &quot;Zero-Backend&quot; của AZtomiq\u003c/h2>\n\u003cp>AZtomiq định nghĩa lại cách xây dựng công cụ bằng triết lý \u003cstrong>Privacy-first &amp; Client-side Priority\u003c/strong>.\u003c/p>\n\u003ch3>⚛️ Kiến trúc Nguyên tử (Atomic Architecture)\u003c/h3>\n\u003cp>Mỗi công cụ là một &quot;Atoms&quot; (nguyên tử) độc lập. Logic xử lý (JS), giao diện (EJS/HTML) và thẩm mỹ (CSS) được đóng gói gọn gàng. Khi người dùng truy cập, trình duyệt chỉ tải đúng những gì cần thiết cho công cụ đó.\u003c/p>\n\u003ch3>🛡️ Xử lý 100% tại Client\u003c/h3>\n\u003cp>Thay vì gửi tệp JSON 10MB lên server để định dạng, AZtomiq dùng sức mạnh của CPU ngay trên máy người dùng.\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Kết quả\u003c/strong>: Tức thì.\u003c/li>\n\u003cli>\u003cstrong>Bảo mật\u003c/strong>: Tuyệt đối – vì dữ liệu chưa bao giờ rời khỏi máy khách.\u003c/li>\n\u003c/ul>\n\u003ch2>3. Tại sao nó lại là &quot;Engine của chiếc xe triệu đô&quot;?\u003c/h2>\n\u003cp>Nếu coi các công cụ là những chiếc xe chạy trên đường, thì AZtomiq chính là khối động cơ bên trong. Hệ sinh thái \u003cstrong>ztools.site\u003c/strong> là minh chứng sống hùng hồn nhất:\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>Scalability\u003c/strong>: Thêm 100 tools mới? Chỉ việc tạo folder và viết logic. Zero scaling issues.\u003c/li>\n\u003cli>\u003cstrong>Performance\u003c/strong>: Điểm Lighthouse luôn chạm trần 100 vì không có server waiting time.\u003c/li>\n\u003cli>\u003cstrong>Cost\u003c/strong>: Vận hành hàng triệu lượt truy cập với chi phí hosting $0 (GitHub Pages/Vercel).\u003c/li>\n\u003c/ul>\n\u003ch2>4. Tương lai của Utility Framework\u003c/h2>\n\u003cp>AZtomiq không chỉ được tạo ra để làm web &quot;spam SEO&quot;. Nó được build với conventions chặt chẽ, hỗ trợ i18n chuyên nghiệp và khả năng mở rộng vô hạn. Đây là nền tảng cho những ai muốn build sản phẩm thực tế, phục vụ người dùng thật mà không muốn bị vướng bận bởi rào cản kỹ thuật của backend.\u003c/p>\n\u003chr>\n\u003cp>\u003cstrong>Kết luận:\u003c/strong> Đã đến lúc chúng ta ngừng phức tạp hóa những thứ đơn giản. Nếu bồ đang ấp ủ một dự án công cụ tiện ích, hãy thử tiếp cận theo hướng Zero-Backend của AZtomiq.\u003c/p>\n\u003cp>👉 Xem thêm tại: \u003ca href=\"https://ztools.site\">ztools.site\u003c/a> - Một minh chứng của sức mạnh này.\u003c/p>\n"}]
+</script>
+
+<!-- Client-side Router & Content Data -->
+<script>
+  (function () {
+    // 1. Initialize Data
+    const dataEl = document.getElementById('blog-posts-data');
+    let postsArray = [];
+    try {
+      postsArray = JSON.parse(dataEl.textContent || '[]');
+    } catch (e) {
+      console.error('Failed to parse blog posts data', e);
+    }
+
+    window.POSTS = {};
+    postsArray.forEach(post => {
+      window.POSTS[post.slug] = post;
+    });
+
+    // 2. Simple Router
+    window.route = (slug) => {
+      const homeView = document.getElementById('home-view');
+      const articleView = document.getElementById('article-view');
+      const contentDiv = document.getElementById('article-content');
+
+      const blogTitle = `Bài viết`;
+      const siteTitle = `AZtomiq`;
+
+      if (!slug) {
+        // Show Home
+        homeView.classList.remove('hidden');
+        articleView.classList.add('hidden');
+        if (window.history.pushState) window.history.pushState(null, null, ' ');
+        document.title = `${blogTitle} - ${siteTitle}`;
+        window.scrollTo(0, 0);
+      } else {
+        // Show Article
+        const post = window.POSTS[slug];
+        if (post) {
+          homeView.classList.add('hidden');
+          articleView.classList.remove('hidden');
+
+          document.getElementById('article-title').textContent = post.title || 'Untitled';
+          document.getElementById('article-meta-top').innerHTML = `
+            <span class="post-tag">${post.tag || 'Blog'}</span>
+            <span class="post-date">${post.date || ''}</span>
+            <span class="post-readtime">${post.readTime || ''}</span>
+          `;
+          contentDiv.innerHTML = post.body || '';
+
+          if (window.history.pushState) window.history.pushState(null, null, '#' + slug);
+          document.title = `${post.title || 'Post'} - ${blogTitle}`;
+          window.scrollTo(0, 0);
+        }
+      }
+    };
+
+    // 3. Listeners
+    window.addEventListener('popstate', () => {
+      const hash = window.location.hash.substring(1);
+      window.route(hash);
+    });
+
+    // 4. Initial Load
+    const initialHash = window.location.hash.substring(1);
+    if (initialHash) window.route(initialHash);
+  })();
+</script>
+
+                
+          </main>
+
+          
+            <footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h3>
+        AZtomiq
+      </h3>
+      <p>
+        Bộ khung A-Z hiện đại để xây dựng trang web tiện ích.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>
+        Liên kết
+      </h4>
+      <ul>
+        <li><a href="../vi/privacy/">
+            Chính sách
+          </a></li>
+        <li><a href="../vi/terms/">
+            Điều khoản
+          </a></li>
+        <li><a href="../vi/changelog/">
+            Cập nhật
+          </a></li>
+        <li><a href="https://github.com/ph4n4n/aztomiq" target="_blank" rel="noopener">
+            GitHub
+          </a></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      <span>
+        © 2025. Được xây dựng với ❤️.
+      </span>
+      <span>v1.1.1</span>
+    </div>
+  </div>
+</footer>
+              
+
+                
+
+                    <script src="../assets/js/global.js?h=9f6288c7"></script>
+                    <script>
+                      // Initialize Lucide icons
+                      if (window.lucide) {
+                        lucide.createIcons();
+                      }
+                    </script>
+
+                    
+</body>
+
+</html>

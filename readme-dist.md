@@ -1,0 +1,58 @@
+# AZtomiq - Production Build
+
+[Tiếng Việt](#tiếng-viet) | [English](#english)
+
+---
+
+<a name="tiếng-viet"></a>
+## 🇻🇳 Tiếng Việt
+
+Đây là kho lưu trữ chứa các tệp tin đã được biên dịch (build) cho trang web
+[AZtomiq.vercel.app](https://aztomiq.vercel.app/).
+
+### 🚀 Về Dự Án
+AZtomiq là một bộ công cụ số toàn diện, ưu tiên quyền riêng tư, được thiết kế để cung cấp các tiện ích chất lượng cao
+cho
+các tác vụ hàng ngày.
+
+- **Quyền riêng tư là trên hết**: Tất cả các xử lý được thực hiện cục bộ trong trình duyệt của bạn. Không có dữ liệu nào
+được gửi lên máy chủ.
+- **Nhanh & Nhẹ**: Được xây dựng dưới dạng trang web tĩnh hiệu suất cao.
+- **Truy cập tự do**: Miễn phí sử dụng, không có quảng cáo xâm lấn hoặc theo dõi.
+
+### 🛠 Tính năng trong bản Build này
+- **Hỗ trợ đa ngôn ngữ**: Có sẵn tiếng Việt và tiếng Anh.
+- **Sẵn sàng cho PWA**: Có thể cài đặt trên điện thoại và máy tính như một ứng dụng gốc.
+- **Tối ưu hóa**: CSS, JS được nén và hình ảnh được tối ưu để tải trang nhanh như chớp.
+
+### 🔗 Liên kết
+- **Trang chủ**: [https://aztomiq.vercel.app/](https://aztomiq.vercel.app/)
+- **Tác giả**: [Anph](https://github.com/ph4n4n)
+
+---
+
+<a name="english"></a>
+## 🇺🇸 English
+
+This repository contains the production-ready assets for [AZtomiq.vercel.app](https://aztomiq.vercel.app/).
+
+### 🚀 About the Project
+AZtomiq is a comprehensive, privacy-first digital toolbox designed to provide high-quality utility tools for everyday
+tasks.
+
+- **Privacy-First**: All processing is done locally in your browser. Nothing is sent to our servers.
+- **Fast & Lightweight**: Built as a high-performance static site.
+- **Open Access**: Free to use without invasive tracking or ads.
+
+### 🛠 Features in this Build
+- **Multilingual Support**: Available in Vietnamese and English.
+- **PWA Ready**: Can be installed on mobile and desktop as a native app.
+- **Optimized Assets**: Minified CSS, JS, and compressed images for lightning-fast load times.
+
+### 🔗 Links
+- **Main Site**: [https://aztomiq.vercel.app/](https://aztomiq.vercel.app/)
+- **Author**: [Anph](https://github.com/ph4n4n)
+
+---
+*Lưu ý: Kho lưu trữ này được cập nhật tự động. Để xem mã nguồn hoặc đóng góp, vui lòng liên hệ với tác giả.*
+*Note: This repository is automatically updated. For source code or contributions, please contact the author.*
